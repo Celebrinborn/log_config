@@ -9,9 +9,9 @@ setup(
         'logging',
         'pyyaml'
     ],
-    url='https://github.com/your-username/my-logging-package',
+    url='https://github.com/Celebrinborn/log_config',
     license='',
-    author='Your Name',
-    author_email='your.email@example.com',
+    author='Celebrinborn',
+    author_email='na',
     description='A package for configuring logging'
 )
