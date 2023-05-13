@@ -34,6 +34,13 @@ def configure_logging(log_file_name: str = None):
     # Configure the logging module
     with open('logging.yaml', 'r') as f:
         config = yaml.safe_load(f.read())
+        log_file_path = os.path.join('logs', log_file_name)
+
+        # check if logs folder exists and create it if it does not
+        log_file_dir = os.path.dirname(log_file_path)
+        if not os.path.exists(log_file_dir):
+            os.makedirs(log_file_dir)
+
         # Update the filename in the configuration dictionary
-        config['handlers']['file']['filename'] = f'./logs/{log_file_name}'
+        config['handlers']['file']['filename'] = log_file_path
         logging.config.dictConfig(config)
